@@ -3,116 +3,126 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./src/style.css" />
+    <title>Portfolio-Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <header class="navbar container">
-      <img src="https://placehold.co/100x60" alt="Logo" />
-      <nav>
-        <ul class="navbar-links">
-          <li>Home</li>
-          <li>Blog</li>
-          <li>Chi sono</li>
-        </ul>
-      </nav>
+  <body class="font-sans text-gray-800">
+
+    <!-- HEADER NAVBAR -->
+    <header class="bg-white shadow">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+
+          <!-- LOGO -->
+          <div class="flex-shrink-0">
+            <img class="h-10 w-auto" src="https://placehold.co/100x60" alt="Logo">
+          </div>
+
+          <!-- NAV LINKS DESKTOP -->
+          <nav class="hidden md:flex space-x-6 font-medium text-gray-800">
+            <a href="#" class="hover:text-amber-500 transition">Home</a>
+            <a href="#" class="hover:text-amber-500 transition">Chi sono</a>
+            <a href="#" class="hover:text-amber-500 transition">Contattami</a>
+          </nav>
+
+          <!-- HAMBURGER BUTTON MOBILE -->
+          <div class="md:hidden">
+            <button id="menu-btn" class="text-gray-800 focus:outline-none">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+        <a href="#" class="block py-2 px-2 text-gray-800 rounded hover:bg-amber-100 transition">Home</a>
+        <a href="#" class="block py-2 px-2 text-gray-800 rounded hover:bg-amber-100 transition">Chi sono</a>
+        <a href="#" class="block py-2 px-2 text-gray-800 rounded hover:bg-amber-100 transition">Contattami</a>
+      </div>
     </header>
+
+    <script>
+      const btn = document.getElementById('menu-btn');
+      const menu = document.getElementById('mobile-menu');
+
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    </script> <!-- script per Hamburger -->
+
+    <!-- HERO -->
     <main>
-      <section class="hero container">
-        <div>
-          <div>
-            <h1 class="text-display">Sono un Full Stack</h1>
-            <p>Il migliore sulla piazza</p>
-          </div>
-          <div>
-            <button class="btn btn-primary">Prenota una call</button>
-            <button class="btn btn-secondary">Vedi portfolio</button>
+      <section class="flex flex-col-reverse lg:flex-row items-center max-w-7xl mx-auto gap-8 py-12 px-6">
+        <div class="w-full lg:w-1/2">
+          <h1 class="text-5xl font-bold mb-4">Sono uno studente in Cybersecurity</h1>
+          <p class="text-lg">Padrone del mondo</p>
+          <div class="flex flex-wrap gap-4">
+            <button class="px-6 py-3 bg-amber-500 text-white rounded-md hover:bg-amber-600 transition">Prenota una call</button>
+            <button class="px-6 py-3 bg-gray-900 text-amber-50 rounded-md hover:bg-gray-700 transition">Vedi portfolio</button>
           </div>
         </div>
-        <img src="https://placehold.co/600x400" alt="" />
+        <div class="w-full lg:w-1/2">
+          <img src="https://placehold.co/600x400" class="w-full rounded-lg shadow-lg" alt="Hero Image" />
+        </div>
       </section>
-      <section>
-        <div class="values container">
-          <article class="card">
-            <h2>UI/UX Design</h2>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Eligendi, hic temporibus voluptatibus eveniet, deserunt ipsum quod
-              aliquid distinctio beatae pariatur dolorem alias iste est tempora
-              fugiat voluptatem quas commodi qui.
-            </p>
+
+      <!-- VALUES -->
+      <section class="bg-gray-50 py-12">
+        <div class="max-w-7xl mx-auto grid gap-8 md:grid-cols-3 px-6">
+          <article class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
+            <h2 class="text-2xl font-semibold mb-2">Database</h2>
+            <p>Progetto e gestisco basi di dati sicure ed efficienti, ottimizzate per ogni esigenza.</p>
           </article>
-          <article class="card">
-            <h2>Backend</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-              illum dolorem rerum autem, ut voluptate non distinctio accusantium
-              culpa qui fugiat eaque dolor ipsa, tempora omnis minus quos sit?
-              A.
-            </p>
+          <article class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
+            <h2 class="text-2xl font-semibold mb-2">Machine Learning</h2>
+            <p>Sviluppo modelli predittivi e analitici per trasformare i dati in valore concreto.</p>
           </article>
-          <article class="card">
-            <h2>Frontend</h2>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia,
-              quam ad dolorem inventore tenetur illo nam voluptatum molestias
-              ipsam earum doloribus iure nostrum maxime hic itaque est rem. At,
-              voluptate!
-            </p>
+          <article class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
+            <h2 class="text-2xl font-semibold mb-2">Sicurezza</h2>
+            <p>Mi occupo di protezione delle informazioni, prevenzione attacchi e valutazione dei rischi.</p>
           </article>
         </div>
       </section>
-      <section class="container">
-        <h2>Offriamo soluzioni</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ea
-          aspernatur eum itaque rerum reprehenderit corporis dicta doloremque
-          repellat unde dolorum laudantium accusamus vero libero quae a,
-          architecto, quibusdam qui.
-        </p>
-        <div class="showroom">
-          <img src="https://placehold.co/200x200" alt="ferrari" />
-          <img src="https://placehold.co/200x200" alt="porsche" />
-          <img src="https://placehold.co/200x200" alt="lambo" />
-          <img src="https://placehold.co/200x200" alt="pagani" />
-          <img src="https://placehold.co/200x200" alt="fiat panda di davide" />
+
+      <!-- SHOWROOM -->
+      <section class="py-12 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Offriamo soluzioni</h2>
+        <p class="mb-8">Un portfolio che spazia da progetti accademici a realizzazioni pratiche per aziende e privati.</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          <img src="https://placehold.co/200x200" alt="Ferrari" class="rounded-lg shadow"/>
+          <img src="https://placehold.co/200x200" alt="Porsche" class="rounded-lg shadow"/>
+          <img src="https://placehold.co/200x200" alt="Lambo" class="rounded-lg shadow"/>
+          <img src="https://placehold.co/200x200" alt="Pagani" class="rounded-lg shadow"/>
+          <img src="https://placehold.co/200x200" alt="Fiat Panda" class="rounded-lg shadow"/>
         </div>
       </section>
-      <section class="container book-a-call-cta">
-        <img src="https://placehold.co/400x400" alt="" />
-        <div class="book-a-call-cta__text">
-          <h2>Adesso tocca a te</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta
-            expedita animi quos quasi dolores? Architecto rerum veritatis quos
-            corrupti minus earum blanditiis facere ducimus laborum beatae.
-            Corrupti consequatur magni a.
-          </p>
-          <button class="btn btn-primary">Prenota una call</button>
+
+      <!-- BOOK A CALL -->
+      <section class="flex flex-col lg:flex-row items-center max-w-7xl mx-auto py-12 px-6 gap-8 bg-amber-50 rounded-lg">
+        <img src="https://placehold.co/400x400" alt="" class="w-full lg:w-1/2 rounded-lg shadow" />
+        <div class="w-full lg:w-1/2">
+          <h2 class="text-3xl font-bold mb-4">Adesso tocca a te</h2>
+          <p class="mb-6">Se vuoi migliorare la tua sicurezza digitale o avviare un progetto, parliamone subito.</p>
+          <button class="px-6 py-3 bg-amber-500 text-white rounded-md hover:bg-amber-600 transition">Prenota una call</button>
         </div>
       </section>
-      <section class="container">
-        <h2>Contattami</h2>
-        <form class="contact-form">
-          <input
-            type="email"
-            name=""
-            id=""
-            placeholder="Inserisci la tua email"
-          />
-          <textarea
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-            placeholder="Ciao Davide ti contatto per l'annuncio Fiat Panda"
-          ></textarea>
-          <div>
-            <button class="btn btn-secondary">Invia</button>
-          </div>
+
+      <!-- CONTACT -->
+      <section class="py-12 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Contattami</h2>
+        <form class="flex flex-col gap-4">
+          <input type="email" placeholder="Inserisci la tua email" class="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"/>
+          <textarea cols="30" rows="5" placeholder="Scrivi qui il tuo messaggio" class="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+          <button class="px-6 py-3 bg-gray-900 text-amber-50 rounded-md hover:bg-gray-700 transition w-fit">Invia</button>
         </form>
       </section>
     </main>
-    <footer class="container">&copy; 2025 | All rights are reserved</footer>
+
+    <footer class="text-center py-6 bg-gray-900 text-amber-50 mt-12">&copy; 2025 | All rights reserved</footer>
+
   </body>
 </html>
